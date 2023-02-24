@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8543874047938413009}
   - component: {fileID: 8543874047938413014}
   - component: {fileID: 8543874047938413010}
+  - component: {fileID: 8763977121181318233}
   m_Layer: 0
   m_Name: Hay Bale
-  m_TagString: Untagged
+  m_TagString: Hay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +93,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: {x: 0, y: 0, z: 20}
   space: 0
+--- !u!114 &8763977121181318233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8543874047938413015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b5b8e4bb6287c498888152035f29fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagFilter: DestroyHay
 --- !u!1001 &8543874047685358100
 PrefabInstance:
   m_ObjectHideFlags: 0
