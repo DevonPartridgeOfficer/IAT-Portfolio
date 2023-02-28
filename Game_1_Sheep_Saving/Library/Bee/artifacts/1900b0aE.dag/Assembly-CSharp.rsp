@@ -329,11 +329,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/RW/Scripts/DestroyOnTrigger.cs"
+"Assets/RW/Scripts/DestroyTimer.cs"
 "Assets/RW/Scripts/HayMachine.cs"
+"Assets/RW/Scripts/Managers/SoundManager.cs"
 "Assets/RW/Scripts/Move.cs"
 "Assets/RW/Scripts/Rotate.cs"
 "Assets/RW/Scripts/Sheep.cs"
 "Assets/RW/Scripts/SheepSpawner.cs"
+"Assets/RW/Scripts/TweenScale.cs"
 -langversion:9.0
 
 /deterministic
