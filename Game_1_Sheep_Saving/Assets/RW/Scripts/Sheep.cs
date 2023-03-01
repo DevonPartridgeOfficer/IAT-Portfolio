@@ -5,6 +5,8 @@ using UnityEngine;
 public class Sheep : MonoBehaviour
 {
     public float runSpeed;
+    public float speedIncrease;
+    public float maxSpeed; 
     public float gotHayDestroyDelay;
     private bool hitByHay;
     private bool dropped;
@@ -12,8 +14,8 @@ public class Sheep : MonoBehaviour
     private Collider myCollider;
     private Rigidbody myRigidbody;
     private SheepSpawner sheepSpawner;
-    public float heartOffset; 
-    public GameObject heartPrefab; 
+    public float heartOffset;
+    public GameObject heartPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,23 @@ public class Sheep : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
+        SpeedCheck();
+    }
+
+    //Values set in editor
+    //Increments the sheep speed each second up to a maximum value
+    //May need to fix this if there is any better solution
+    //Unsure if it means after 10 seconds of playtime it gets harder and so on...
+    private void SpeedCheck()
+    {
+        if (runSpeed <= maxSpeed)
+        {
+            runSpeed += speedIncrease * Time.deltaTime;
+        }
+        else
+        {
+            runSpeed = maxSpeed; //Introduces issues if max speed is set to 0. Might be better to calculate a max speed off the given values eg(maxSpeed = runSpeed * speedInterval in 'Start()')
+        }
     }
 
     private void HitByHay()
