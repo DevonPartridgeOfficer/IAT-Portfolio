@@ -9,6 +9,22 @@ public class GameManagerBehaviour : MonoBehaviour
     public Text waveLabel;
     public GameObject[] nextWaveLabels;
     public bool gameOver = false;
+    public Text healthLabel;
+    public GameObject[] healthIndicator;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Gold = 1000;
+        Wave = 0;
+        Health = 5;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     private int gold;
     public int Gold
@@ -39,16 +55,34 @@ public class GameManagerBehaviour : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    //Checks if incoming health value is less than current health value and decrements the counter
+    //Game ends at 0 health
+    private int health;
+    public int Health
     {
-        Gold = 1000;
-        Wave = 0;
-    }
+        get { return health; }
+        set
+        {
+            if (value < health)
+                Camera.main.GetComponent<CameraShake>().Shake();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            health = value;
+            healthLabel.text = "HEALTH: " + health;
+
+            if (health <= 0 && !gameOver)
+            {
+                gameOver = true;
+                GameObject gameOverText = GameObject.FindGameObjectWithTag("GameOver");
+                gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+            }
+
+            for (int i = 0; i < healthIndicator.Length; i++)
+            {
+                if (i < Health)
+                    healthIndicator[i].SetActive(true);
+                else
+                    healthIndicator[i].SetActive(false);
+            }
+        }
     }
 }
