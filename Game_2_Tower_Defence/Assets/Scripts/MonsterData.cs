@@ -22,7 +22,7 @@ public class MonsterData : MonoBehaviour
         set 
         { 
             currentLevel = value;
-            int currentLevelIndex = levels.IndexOf(CurrentLevel);
+            int currentLevelIndex = levels.IndexOf(currentLevel);
             GameObject levelVisualisation = levels[currentLevelIndex].visualisation;
 
             for (int i = 0; i < levels.Count; i++)
@@ -49,7 +49,7 @@ public class MonsterData : MonoBehaviour
         int maxLevelIndex = levels.Count - 1;
         if (currentLevelIndex < maxLevelIndex) //Only level up if less than maxlevel
         {
-            return levels[currentLevelIndex + 1];
+            return levels[currentLevelIndex+1];
         }
         else
         {
@@ -62,7 +62,7 @@ public class MonsterData : MonoBehaviour
         int currentLevelIndex = levels.IndexOf(currentLevel);
         if (currentLevelIndex < levels.Count - 1)
         {
-            CurrentLevel = levels[currentLevelIndex + 1];
+            CurrentLevel = levels[currentLevelIndex+1];
         }
     }
 }
