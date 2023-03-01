@@ -2,7 +2,7 @@
 -----
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/90590089/220858861-73beae36-bae8-4f1b-8775-9ee8d09799fe.gif"/>
+  <img src="https://user-images.githubusercontent.com/90590089/222048453-5768da70-cc84-4949-895c-fa07f21d1807.gif"/>
   <h1>Portfolio</h1>
   <p>ID630151: Introduction to Algorithmic Problem Solving<br>Devon Partridge-Officer<br>Student ID: 1000103794</p>
 </div>
@@ -15,8 +15,8 @@ This repository contains code that I have worked on as a part of my Bachelors of
 There will be four games that have been developed using C# and Unity.
 | Module | Title                           | Game               |
 |--------|---------------------------------|--------------------|
-| 01     | Introduction to Unity Scripting | Sheep Saving       |
-| 02     | Game Mechanics                  | Tower Defense      |
+| 01     | Introduction to Unity Scripting | [Sheep Saving](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_1_Sheep_Saving)       |
+| 02     | Game Mechanics                  | [Tower Defense](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_2_Tower_Defence)      |
 | 03     | Maze Generation                 | 3D Dungeon Crawler |
 | 04     | AI Strategy                     | Chess              |
 
