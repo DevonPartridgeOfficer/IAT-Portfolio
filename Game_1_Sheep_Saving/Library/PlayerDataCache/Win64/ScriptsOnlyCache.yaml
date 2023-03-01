@@ -85,39 +85,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 1586}
+      Script: {instanceID: 1628}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1630}
     - Class: 114
-      Script: {instanceID: 1626}
+      Script: {instanceID: 1670}
     - Class: 114
-      Script: {instanceID: 1634}
+      Script: {instanceID: 1678}
     - Class: 114
-      Script: {instanceID: 1792}
+      Script: {instanceID: 1836}
     - Class: 114
-      Script: {instanceID: 1794}
+      Script: {instanceID: 1838}
     - Class: 114
-      Script: {instanceID: 1864}
+      Script: {instanceID: 1908}
     - Class: 114
-      Script: {instanceID: 1866}
+      Script: {instanceID: 1910}
     - Class: 114
-      Script: {instanceID: 1890}
+      Script: {instanceID: 1934}
     - Class: 114
-      Script: {instanceID: 2080}
+      Script: {instanceID: 2126}
     - Class: 114
-      Script: {instanceID: 2086}
+      Script: {instanceID: 2132}
     - Class: 114
-      Script: {instanceID: 2372}
+      Script: {instanceID: 2418}
     - Class: 114
-      Script: {instanceID: 2378}
+      Script: {instanceID: 2424}
     - Class: 114
-      Script: {instanceID: 2426}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2444}
+      Script: {instanceID: 2490}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2664}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -174,15 +174,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1580}
+      Script: {instanceID: 1622}
     - Class: 114
-      Script: {instanceID: 1792}
+      Script: {instanceID: 1632}
     - Class: 114
-      Script: {instanceID: 2378}
+      Script: {instanceID: 1836}
     - Class: 114
-      Script: {instanceID: 18318}
+      Script: {instanceID: 2068}
     - Class: 114
-      Script: {instanceID: 18484}
+      Script: {instanceID: 2424}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -220,6 +220,12 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChangeColorOnMouseOver
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -236,6 +242,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameStateManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartButton
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -362,6 +374,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayModeRunnerCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuitButton
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -506,18 +524,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: StartButton
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuitButton
   platform: 19
   scenePathNames:
   - Assets/RW/Scenes/Title.unity
