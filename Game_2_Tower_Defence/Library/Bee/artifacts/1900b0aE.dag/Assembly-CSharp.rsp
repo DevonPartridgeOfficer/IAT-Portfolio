@@ -342,9 +342,11 @@
 "Assets/Scripts/CameraShake.cs"
 "Assets/Scripts/GameManagerBehaviour.cs"
 "Assets/Scripts/GameOver.cs"
+"Assets/Scripts/HealthBar.cs"
 "Assets/Scripts/MonsterData.cs"
 "Assets/Scripts/MoveEnemy.cs"
 "Assets/Scripts/PlaceMonster.cs"
+"Assets/Scripts/ShootEnemies.cs"
 "Assets/Scripts/SpawnEnemy.cs"
 "Assets/Scripts/Tutorial.cs"
 -langversion:9.0
