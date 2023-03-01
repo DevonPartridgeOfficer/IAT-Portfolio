@@ -22,10 +22,10 @@ public class MonsterData : MonoBehaviour
         set 
         { 
             currentLevel = value;
-            int currentLevelIndex = levles.IndexOf(CurrentLevel);
+            int currentLevelIndex = levels.IndexOf(CurrentLevel);
             GameObject levelVisualisation = levels[currentLevelIndex].visualisation;
 
-            for (int i = 0; i < levles.Count; i++)
+            for (int i = 0; i < levels.Count; i++)
             {
                 if (levelVisualisation != null)
                 {
