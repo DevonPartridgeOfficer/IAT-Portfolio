@@ -10,6 +10,8 @@ public class MazeConstructor : MonoBehaviour
     [SerializeField] private Material startMat;
     [SerializeField] private Material treasureMat;
 
+    private MazeMeshGenerator meshGenerator;
+
     public int[,] data
     {
         get; private set;
@@ -18,6 +20,8 @@ public class MazeConstructor : MonoBehaviour
     //Creates a basic maze
     void Awake()
     {
+        meshGenerator = new MazeMeshGenerator();
+
         // default to walls surrounding a single empty cell
         data = new int[,]
         {
@@ -33,6 +37,7 @@ public class MazeConstructor : MonoBehaviour
             Debug.LogError("Odd numbers work better for dungeon size.");
 
         data = FromDimensions(sizeRows, sizeCols);
+        DisplayMaze();
     }
 
     //Generates 2D array of int for rows/cols
@@ -78,5 +83,22 @@ public class MazeConstructor : MonoBehaviour
         }
 
         GUI.Label(new Rect(20, 20, 500, 500), msg);
+    }
+
+    private void DisplayMaze()
+    {
+        GameObject go = new GameObject();
+        go.transform.position = Vector3.zero;
+        go.name = "Procedural Maze";
+        go.tag = "Generated";
+
+        MeshFilter mf = go.AddComponent<MeshFilter>();
+        mf.mesh = meshGenerator.FromData(data);
+
+        MeshCollider mc = go.AddComponent<MeshCollider>();
+        mc.sharedMesh = mf.mesh;
+
+        MeshRenderer mr = go.AddComponent<MeshRenderer>();
+        mr.materials = new Material[2] { mazeMat1, mazeMat2 };
     }
 }
