@@ -248,13 +248,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 529368642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b490c939827ee2498ac146d559be015, type: 3}
+  m_Script: {fileID: 11500000, guid: 6467560557b6c02409ed574244adc3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 11
+  rows: 17
   cols: 11
-  playerPrefab: {fileID: 526753307576256837, guid: 38489d5a45d4eb941aa4fc7cc0a024ad, type: 3}
-  monsterPrefab: {fileID: 895211356916686346, guid: 09b229e705e4bea428f960c84c5058e0, type: 3}
 --- !u!114 &529368644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,15 +262,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 529368642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d9554ccdb473c48bb36b57199ec7c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e97241c971fee247af2cfb15c38ceb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   showDebug: 1
-  mazeMat1: {fileID: 2100000, guid: ee1783965edfa174f8339d26768f43c2, type: 2}
-  mazeMat2: {fileID: 2100000, guid: 545a9273b54400a4799bbd2fa83df569, type: 2}
-  startMat: {fileID: 2100000, guid: d8719ff0a4b40af42a8410f5d047d6f3, type: 2}
-  treasureMat: {fileID: 2100000, guid: ad3f0fbfa96bd414c8f698354958e49d, type: 2}
   placementThreshold: 0.1
+  mazeMat1: {fileID: 0}
+  mazeMat2: {fileID: 0}
+  startMat: {fileID: 0}
+  treasureMat: {fileID: 0}
 --- !u!4 &529368645
 Transform:
   m_ObjectHideFlags: 0
