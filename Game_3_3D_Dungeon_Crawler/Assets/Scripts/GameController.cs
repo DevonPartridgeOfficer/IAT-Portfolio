@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject playerPrefab; //Add a player with assigned prefab
+    public GameObject monsterPrefab; //Add a monster with assigned prefab
 
     private MazeConstructor constructor;
     
@@ -22,6 +23,7 @@ public class GameController : MonoBehaviour
     {
         constructor.GenerateNewMaze(rows, cols);
         CreatePlayer();
+        CreateMonster();
     }
 
     //Setup for player character
@@ -31,5 +33,13 @@ public class GameController : MonoBehaviour
         Vector3 playerStartPosition = new Vector3(constructor.hallWidth, 1, constructor.hallWidth);
         GameObject player = Instantiate(playerPrefab, playerStartPosition, Quaternion.identity);
         player.tag = "Generated";
+    }
+
+    //Creates the monster at the final cell of the world
+    private void CreateMonster()
+    {
+        Vector3 monsterPosition = new Vector3(constructor.goalCol * constructor.hallWidth, 0f, constructor.goalRow * constructor.hallWidth);
+        GameObject monster = Instantiate(monsterPrefab, monsterPosition, Quaternion.identity);
+        monster.tag = "Generated";
     }
 }
