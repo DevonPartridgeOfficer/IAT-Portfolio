@@ -13,24 +13,28 @@ public class AIController : MonoBehaviour
         get { return graph; }
         set { graph = value; }
     }
+
     private GameObject monster;
     public GameObject Monster
     {
         get { return monster; }
         set { monster = value; }
     }
+
     private GameObject player;
     public GameObject Player
     {
         get { return player; }
         set { player = value; }
     }
+
     private float hallWidth;
     public float HallWidth
     {
         get { return hallWidth; }
         set { hallWidth = value; }
     }
+
     [SerializeField] private float monsterSpeed;
     private int startRow = -1;
     private int startCol = -1;
@@ -39,6 +43,13 @@ public class AIController : MonoBehaviour
     {
         startRow = graph.GetUpperBound(0) - 1;
         startCol = graph.GetUpperBound(1) - 1;
+    }
+
+    public void StopAI()
+    {
+        startRow = -1;
+        startCol = -1;
+        Destroy(monster);
     }
 
     void Update()

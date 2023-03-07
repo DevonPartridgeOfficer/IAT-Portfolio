@@ -66,8 +66,8 @@ MonoBehaviour:
   headCam: {fileID: 5439494710789062278}
   speed: 6
   gravity: -9.8
-  sensitivityHor: 9
-  sensitivityVert: 9
+  sensitivityHor: 5
+  sensitivityVert: 5
   minimumVert: -45
   maximumVert: 45
 --- !u!1 &5439494710789062274
