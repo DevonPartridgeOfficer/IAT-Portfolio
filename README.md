@@ -13,12 +13,14 @@
 This repository contains code that I have worked on as a part of my Bachelors of Information Technology Course. Any external sources of information/content will be referenced at the end of this ReadMe.
 
 There will be four games that have been developed using C# and Unity.
-| Module | Title                           | Game               |
-|--------|---------------------------------|--------------------|
-| 01     | Introduction to Unity Scripting | [Sheep Saving](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_1_Sheep_Saving)       |
-| 02     | Game Mechanics                  | [Tower Defense](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_2_Tower_Defence)      |
-| 03     | Maze Generation                 | [3D Dungeon Crawler](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_3_3D_Dungeon_Crawler) |
-| 04     | AI Strategy                     | Chess              |
+| Module | Title                           | Game               | Lecture Notes | Assessment Tasks  | Advanced Tasks |
+|--------|---------------------------------|--------------------|---------------|-------------------|----------------|
+| 01     | Introduction to Unity Scripting | [Sheep Saving](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_1_Sheep_Saving)       | :heavy_check_mark: | :heavy_check_mark: | &cross; | 
+| 02     | Game Mechanics                  | [Tower Defense](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_2_Tower_Defence)      | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| 03     | Maze Generation                 | [3D Dungeon Crawler](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_3_3D_Dungeon_Crawler) | &cross; | &cross; | &cross; |
+| 04     | AI Strategy                     | Chess              | &cross; | &cross; | &cross; |
+
+I will be leaving any advanced assessment tasks until after I have finished all of the lecture notes/assessment tasks for all games so that I have an increased fundemental knowledge of using Unity. This should give me a better chance at writing well-functioning code.
 
 ## References
 ### ReadMe
