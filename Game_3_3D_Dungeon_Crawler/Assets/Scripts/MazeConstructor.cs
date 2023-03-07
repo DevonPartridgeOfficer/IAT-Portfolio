@@ -16,11 +16,15 @@ public class MazeConstructor : MonoBehaviour
     {
         get; private set;
     }
+    public float hallWidth { get; private set; } //Places player/treasure in middle of hallway
+    public int goalRow { get; private set; } //Determines location of treasure/enemy
+    public int goalCol { get; private set; } //Determines location of treasure/enemy
 
     //Creates a basic maze
     void Awake()
     {
         meshGenerator = new MazeMeshGenerator();
+        hallWidth = meshGenerator.width;
 
         // default to walls surrounding a single empty cell
         data = new int[,]
@@ -33,10 +37,15 @@ public class MazeConstructor : MonoBehaviour
 
     public void GenerateNewMaze(int sizeRows, int sizeCols)
     {
+        DisposeOldMaze();
+
         if (sizeRows % 2 == 0 && sizeCols % 2 == 0)
             Debug.LogError("Odd numbers work better for dungeon size.");
 
         data = FromDimensions(sizeRows, sizeCols);
+        goalRow = data.GetUpperBound(0) - 1;
+        goalCol = data.GetUpperBound(1) - 1;
+
         DisplayMaze();
     }
 
@@ -100,5 +109,15 @@ public class MazeConstructor : MonoBehaviour
 
         MeshRenderer mr = go.AddComponent<MeshRenderer>();
         mr.materials = new Material[2] { mazeMat1, mazeMat2 };
+    }
+
+    //Remove previous maze objects (tag = generated)
+    public void DisposeOldMaze()
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Generated");
+        foreach (GameObject go in objects)
+        {
+            Destroy(go);
+        }
     }
 }

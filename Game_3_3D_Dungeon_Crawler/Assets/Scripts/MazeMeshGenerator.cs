@@ -89,6 +89,7 @@ public class MazeMeshGenerator
     {
         int index = newVertices.Count;
 
+        //Centres the mazee mesh at [0,0]
         Vector3 vert1 = new Vector3(-.5f, -.5f, 0);
         Vector3 vert2 = new Vector3(-.5f, .5f, 0);
         Vector3 vert3 = new Vector3(.5f, .5f, 0);
