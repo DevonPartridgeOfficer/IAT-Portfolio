@@ -17,10 +17,14 @@ There will be four games that have been developed using C# and Unity.
 |--------|---------------------------------|--------------------|---------------|-------------------|----------------|
 | 01     | Introduction to Unity Scripting | [Sheep Saving](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_1_Sheep_Saving)       | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | &cross; &cross; &cross; | 
 | 02     | Game Mechanics                  | [Tower Defense](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_2_Tower_Defence)      | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | :heavy_check_mark: | &cross; &cross; &cross;|
-| 03     | Maze Generation                 | [3D Dungeon Crawler](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_3_3D_Dungeon_Crawler) | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | &cross; &cross; | &cross; &cross; |
+| 03     | Maze Generation                 | [3D Dungeon Crawler](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_3_3D_Dungeon_Crawler) | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | &check; :heavy_check_mark: | &cross; &cross; |
 | 04     | AI Strategy                     | Chess              | &cross; &cross; | &cross; &cross; | &cross; &cross; |
 
-I will be leaving any advanced assessment tasks until after I have finished all of the lecture notes/assessment tasks for all games so that I have an increased fundemental knowledge of using Unity. This should give me a better chance at writing well-functioning code.
+**Game_3 Current Issue:**
+ Enemy does not seem to be following the path to the player and still walks in place. Rewrote the code twice but unsure what could be the issue. Tried a movement speed range from 1 -> 100.
+
+**Advanced Tasks Note:**
+ I will be leaving any advanced assessment tasks until after I have finished all of the lecture notes/assessment tasks for all games so that I have an increased fundemental knowledge of using Unity. This should give me a better chance at writing well-functioning code.
 
 ## References
 ### ReadMe
