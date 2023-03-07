@@ -4,6 +4,7 @@ public class MazeConstructor : MonoBehaviour
 {
     public bool showDebug;
     public float placementThreshold = 0.1f;   // chance of empty space
+    public Node[,] graph;
 
     [SerializeField] private Material mazeMat1;
     [SerializeField] private Material mazeMat2;
@@ -45,6 +46,12 @@ public class MazeConstructor : MonoBehaviour
         data = FromDimensions(sizeRows, sizeCols);
         goalRow = data.GetUpperBound(0) - 1;
         goalCol = data.GetUpperBound(1) - 1;
+
+        graph = new Node[sizeRows, sizeCols];
+
+        for (int i = 0; i < sizeRows; i++)
+            for (int j = 0; j < sizeCols; j++)
+                graph[i, j] = data[i, j] == 0 ? new Node(i, j, true) : new Node(i, j, false);
 
         DisplayMaze();
     }
