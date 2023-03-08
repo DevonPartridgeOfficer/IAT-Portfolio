@@ -13,6 +13,7 @@ public enum PlayerTeam
 public class GameManager : MonoBehaviour
 {
     BoardManager board;
+    Minimax minimax;
     public PlayerTeam playerTurn; //Whose turn it currently is
     bool kingDead = false; //Flag for gameover
     public GameObject fromHighlight;
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
     //Sets up the board
     void Start()
     {
-        board = BoardManager.Instance;        
+        board = BoardManager.Instance;
+        minimax = Minimax.Instance;
         board.SetupBoard();
     }
 
@@ -58,24 +60,12 @@ public class GameManager : MonoBehaviour
         isCoroutineExecuting = true;
 
         //Gameover check
-        if (kingDead)                    
-            Debug.Log(playerTurn + " wins!");        
+        if (kingDead)
+            Debug.Log(playerTurn + " wins!");
         else if (!kingDead) //Move if game still running
-        {                     
-            MoveFunction movement = new MoveFunction(board);
-            MoveData move = null;
-            for (int y = 0; y < 8; y++)                
-                for (int x = 0; x < 8; x++)            
-                {
-                    TileData tile = board.GetTileFromBoard(new Vector2(x, y));
-                    if(tile.CurrentPiece != null && tile.CurrentPiece.Team == playerTurn)
-                    {
-                        List<MoveData> pieceMoves = movement.GetMoves(tile.CurrentPiece, tile.Position);
-                        if(pieceMoves.Count > 0)                        
-                            move = pieceMoves[0];                        
-                    }
-                }
-        
+        {
+            MoveData move = minimax.GetMove();
+
             RemoveObject("Highlight"); //Clear previous move highlight so that a new one can be shown
             ShowMove(move);
 
