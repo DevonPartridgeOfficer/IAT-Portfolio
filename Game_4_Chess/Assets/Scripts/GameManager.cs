@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//What team is playing - white or black
 public enum PlayerTeam
 {
     NONE = -1,
@@ -12,18 +13,21 @@ public enum PlayerTeam
 public class GameManager : MonoBehaviour
 {
     BoardManager board;
-    public PlayerTeam playerTurn;
-    bool kingDead = false;
+    public PlayerTeam playerTurn; //Whose turn it currently is
+    bool kingDead = false; //Flag for gameover
     public GameObject fromHighlight;
     public GameObject toHighlight;
 
-    private static GameManager instance;    
+    //Singleton instance - access other script
+    private static GameManager instance; 
     public static GameManager Instance
     {
         get { return instance; }
     }
-    private bool isCoroutineExecuting = false;
 
+    private bool isCoroutineExecuting = false; //Delay coroutine for piece move
+
+    //Set instance to this singleton
     private void Awake()
     {
         if (instance == null)        
@@ -32,27 +36,31 @@ public class GameManager : MonoBehaviour
             Destroy(this);    
     }    
 
+    //Sets up the board
     void Start()
     {
         board = BoardManager.Instance;        
         board.SetupBoard();
     }
 
+    //Starts a new move coroutine
     private void Update()
     {
         StartCoroutine(DoAIMove());
     }
 
+    //Runs the game
     IEnumerator DoAIMove()
     {       
-        if(isCoroutineExecuting)
+        if(isCoroutineExecuting) //Stops if already running
             yield break;
 
         isCoroutineExecuting = true;
 
+        //Gameover check
         if (kingDead)                    
             Debug.Log(playerTurn + " wins!");        
-        else if (!kingDead)
+        else if (!kingDead) //Move if game still running
         {                     
             MoveFunction movement = new MoveFunction(board);
             MoveData move = null;
@@ -68,16 +76,17 @@ public class GameManager : MonoBehaviour
                     }
                 }
         
-            RemoveObject("Highlight");
+            RemoveObject("Highlight"); //Clear previous move highlight so that a new one can be shown
             ShowMove(move);
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1); //Delay for moves showing
             
-            SwapPieces(move);  
-            if(!kingDead)                
+            
+            SwapPieces(move); //Moves the pieces 
+            if (!kingDead) //Keeps game running and swap team if no game over               
                 UpdateTurn();     
 
-            isCoroutineExecuting = false;                                                                                                         
+            isCoroutineExecuting = false; //Let another coroutine run after this                                                                                                        
         }
     }
 

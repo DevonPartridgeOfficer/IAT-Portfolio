@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Maintains the state of the board
 public class BoardManager : MonoBehaviour
 {
     private static BoardManager instance;

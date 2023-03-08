@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Holds position info for pieces and where it is moving to
 public class ChessPiece : MonoBehaviour
 {
     public enum PieceType
