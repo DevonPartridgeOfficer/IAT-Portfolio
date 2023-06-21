@@ -1,3 +1,7 @@
+/*  Filename: DestroyOnTrigger.cs
+ *   Purpose: Removes any gameobject that has correct tag passing through a trigger area
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
