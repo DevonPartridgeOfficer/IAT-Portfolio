@@ -1,3 +1,9 @@
+/*  Filename: GameStateManager.cs
+ *   Purpose: Sets values for current scores
+ *            Triggers gameover
+ *            Allows exiting with esc during gameplay
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,16 +19,16 @@ public class GameStateManager : MonoBehaviour
     [HideInInspector]
     public int sheepDropped;
 
-    public int sheepDroppedBeforeGameOver;
+    public int sheepDroppedBeforeGameOver; //Gameover flag
     public SheepSpawner sheepSpawner;
 
-    // Start is called before the first frame update
+    // Start a new GameStateManager instance
     void Awake()
     {
         Instance = this;
     }
 
-    // Update is called once per frame
+    // Check if player has pressed esc to exit game
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -31,6 +37,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    //Increment the UI display for saved
     public void SavedSheep()
     {
         sheepSaved++;
@@ -38,21 +45,25 @@ public class GameStateManager : MonoBehaviour
 
     }
 
-    private void GameOver()
-    {
-        sheepSpawner.canSpawn = false;
-        sheepSpawner.DestroyAllSheep();
-        UIManager.Instance.ShowGameOverWindow();
-    }
-
+    //Increment the UI display for losses
+    //Check if threshold reached and trigger gameover
     public void DroppedSheep()
     {
         sheepDropped++;
         UIManager.Instance.UpdateSheepDropped();
 
-        if(sheepDropped == sheepDroppedBeforeGameOver)
+        if (sheepDropped == sheepDroppedBeforeGameOver)
         {
             GameOver();
         }
+    }
+
+    //Stops all sheep spawning and removes all remaining sheep objects
+    //Show gameover screen
+    private void GameOver()
+    {
+        sheepSpawner.canSpawn = false;
+        sheepSpawner.DestroyAllSheep();
+        UIManager.Instance.ShowGameOverWindow();
     }
 }

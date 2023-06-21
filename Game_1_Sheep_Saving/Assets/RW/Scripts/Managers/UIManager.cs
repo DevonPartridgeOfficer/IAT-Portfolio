@@ -1,3 +1,8 @@
+/*  Filename: UIManager.cs
+ *   Purpose: Reads and displays current saved/lost sheep to screen
+ *            Toggles gameover screen
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,17 +16,19 @@ public class UIManager : MonoBehaviour
     public Text sheepDroppedText;
     public GameObject gameOverWindow;
 
-    // Start is called before the first frame update
+    // Start a new UIManager instance
     void Awake()
     {
         Instance = this;
     }
 
+    //Updates saved with value set by GameStateManager
     public void UpdateSheepSaved() 
     {
         sheepSavedText.text = GameStateManager.Instance.sheepSaved.ToString();
     }
 
+    //Updates dropped with value set by GameStateManager
     public void UpdateSheepDropped() 
     {
         sheepDroppedText.text = GameStateManager.Instance.sheepDropped.ToString();

@@ -1,3 +1,7 @@
+/*  Filename: TweenScale.cs
+ *   Purpose: 'Animates' sheep heart object between two sizes over time
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,15 +11,15 @@ public class TweenScale : MonoBehaviour
     public float targetScale; 
     public float timeToReachTarget; 
     private float startScale;  
-    private float percentScaled; 
+    private float percentScaled;
 
-    // Start is called before the first frame update
+    // Sets starting scale to the current scale of the heart
     void Start()
     {
         startScale = transform.localScale.x;
     }
 
-    // Update is called once per frame
+    // Scales to target amount over time
     void Update()
     {
         if (percentScaled < 1f) 

@@ -1,3 +1,8 @@
+/*  Filename: StartButton.cs
+ *   Purpose: Starts a new game from the titlescreen
+ *            (Loads new 'Game' scene)
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,29 +1,28 @@
+/*  Filename: SheepSpawner.cs
+ *   Purpose: Manages the creation/deletion of sheep objects
+ *            Starts a coroutine to spawn sheep until gameover flag (from GameStateManager.cs)
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SheepSpawner : MonoBehaviour
 {
-    public bool canSpawn = true;
-
     public GameObject sheepPrefab;
-    public List<Transform> sheepSpawnPositions = new List<Transform>();
+    public bool canSpawn = true; //Sets sheep to constantly spawn during gameplay
     public float timeBetweenSpawns;
-
+    public List<Transform> sheepSpawnPositions = new List<Transform>();
     private List<GameObject> sheepList = new List<GameObject>();
 
-    // Start is called before the first frame update
+    // Starts sheep spawning routine
     void Start()
     {
         StartCoroutine(SpawnRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Instantiates sheep to a list of possible positions
+    //Adds sheep to list of 'alive' sheep
     private void SpawnSheep()
     {
         Vector3 randomPosition = sheepSpawnPositions[Random.Range(0, sheepSpawnPositions.Count)].position;
@@ -32,6 +31,8 @@ public class SheepSpawner : MonoBehaviour
         sheep.GetComponent<Sheep>().SetSpawner(this);
     }
 
+    //Spawns sheep after an interval
+    //canSpawn will be false after GameOver() in GameStateManager.cs
     private IEnumerator SpawnRoutine()
     {
         while (canSpawn)
@@ -41,11 +42,13 @@ public class SheepSpawner : MonoBehaviour
         }
     }
 
+    //Removes sheep from 'alive' list after hit/drop
     public void RemoveSheepFromList(GameObject sheep)
     {
         sheepList.Remove(sheep);
     }
 
+    //Remove all sheep objects from current game after GameOver()
     public void DestroyAllSheep()
     {
         foreach (GameObject sheep in sheepList)
