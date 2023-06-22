@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*  Filename: BoardManager.cs
+ *   Purpose: Maintains the current state of all tiles on board
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

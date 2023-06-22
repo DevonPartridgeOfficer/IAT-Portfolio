@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿/*  Filename: MoveFunction.cs
+ *   Purpose: Retutrns a list of legal moves for each piece type
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Returns a list of legal moves for a given piece
 public class MoveFunction
 {
     BoardManager board;

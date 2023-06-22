@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*  Filename: MoveHeuristic.cs
+ *   Purpose: Assigns values to all of the pieces for Minimax calculations
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

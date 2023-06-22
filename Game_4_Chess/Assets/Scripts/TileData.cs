@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿/*  Filename: TileData.cs
+ *   Purpose: Information about tile positions on board and any pieces on position
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 //2D array of TileData
-//Holds information about tile position on board and any pieces on the tile
 public class TileData
 {
     private Vector2 position = Vector2.zero;

@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*  Filename: GameManager.cs
+ *   Purpose: Runs the game by deciding turns
+ *            Shows movement highlights, moving pieces, removing pieces
+ *            Ends after king (either team) dead
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

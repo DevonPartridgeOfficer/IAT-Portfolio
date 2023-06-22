@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*  Filename: ChessPiece.cs
+ *   Purpose: Holds information for piece type, position and where its moving
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

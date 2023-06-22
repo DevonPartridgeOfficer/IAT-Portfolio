@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿/*  Filename: MoveData.cs
+ *   Purpose: Holds data on piece movement
+ *            What tile they move from, move to, and whether to destroy an enemy piece
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//holds some data about moves -
-//what tile they move from, what tile they move to, and whether a piece was already on the tile being moved to
 public class MoveData
 {
     public TileData firstPosition = null;
