@@ -12,7 +12,7 @@
 ## Information
 This repository contains code that I have worked on as a part of my Bachelors of Information Technology Course. Any external sources of information/content will be referenced at the end of this ReadMe.
 
-There will be four games that have been developed using C# and Unity.
+There are four games that have been developed using C# and Unity.
 | Module | Title                           | Game               | Lecture Notes | Assessment Tasks  | Advanced Tasks |
 |--------|---------------------------------|--------------------|---------------|-------------------|----------------|
 | 01     | Introduction to Unity Scripting | [Sheep Saving](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_1_Sheep_Saving)       | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | &cross; &cross; &cross; | 
@@ -20,12 +20,9 @@ There will be four games that have been developed using C# and Unity.
 | 03     | Maze Generation                 | [3D Dungeon Crawler](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_3_3D_Dungeon_Crawler) | :heavy_check_mark: :heavy_check_mark: :heavy_check_mark: | :heavy_check_mark: :heavy_check_mark: | &cross; &cross; |
 | 04     | AI Strategy                     | [Chess](https://github.com/DevonPartridgeOfficer/IAT-Portfolio/tree/main/Game_4_Chess) | :heavy_check_mark: :heavy_check_mark: | :heavy_check_mark: :heavy_check_mark: | &cross; &cross; |
 
-**Advanced Tasks Note:**
- I will be leaving any advanced assessment tasks until after I have finished all of the lecture notes/assessment tasks for all games so that I have an increased fundemental knowledge of using Unity. This should give me a better chance at writing well-functioning code.
-
 ## References
 ### ReadMe
 Tromeur, J. (2022, August 22). Cartoon 3D World: Header Image. Pixabay. https://pixabay.com/gifs/cartoon-3d-world-rockets-earth-480/
 
-### Code
+### Code and Lecture Notes
 Moskal, A., & Orr, G. (n.d.). Intro to Algorithmic Problem Solving. Github. Retrieved February 20, 2023, from https://github.com/otago-polytechnic-bit-courses/ID623001-introduction-to-algorithmic-problem-solving
