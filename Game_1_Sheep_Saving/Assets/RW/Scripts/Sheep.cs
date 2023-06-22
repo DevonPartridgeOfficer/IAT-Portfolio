@@ -1,6 +1,7 @@
 /*  Filename: Sheep.cs
  *   Purpose: Used to create and manage sheep collision
  *            Updates movement and checks if hit/dropped
+ *            Speeds up sheep running after reaching bridge ingame
  */
 
 using System.Collections;
@@ -23,18 +24,32 @@ public class Sheep : MonoBehaviour
     //Dropped variables
     private bool dropped;
     public float dropDestroyDelay;
+    //Sheep speed increase
+    private float elapsedTime;
+    private float speedIncreaseInterval = 4f; //Speed up sheep after 4 seconds (once it reaches bridge/after passing machine)
+    private float speedIncreaseAmount = 1.5f; //Speed up sheep by 50%
 
     // Gets the collider and rigidbody of sheep gameobject
     void Start()
     {
         myCollider = GetComponent<Collider>();
         myRigidbody = GetComponent<Rigidbody>();
+        elapsedTime = 0f;
     }
 
-    // Moves the sheep foward at a constant runspeed over time
+    // Moves the sheep foward
+    //Will update the sheeps speed once it is closer to the player
     void Update()
     {
         transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
+
+        // Increments individual sheep speed after elapsed time
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime >= speedIncreaseInterval)
+        {
+            runSpeed *= speedIncreaseAmount;
+            elapsedTime = 0f;
+        }
     }
 
     //Checks if haybale has collided with sheep or sheep has dropped off edge, calls appropriate functions
@@ -70,7 +85,6 @@ public class Sheep : MonoBehaviour
         SoundManager.Instance.PlaySheepHitClip();
         GameStateManager.Instance.SavedSheep();
     }
-
 
     //After sheep reaches edge, add gravity, destroy object
     private void Drop()

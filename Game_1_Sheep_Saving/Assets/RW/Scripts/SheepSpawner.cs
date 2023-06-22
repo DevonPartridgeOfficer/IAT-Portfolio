@@ -15,7 +15,8 @@ public class SheepSpawner : MonoBehaviour
     public float timeBetweenSpawns;
     private float sheepSpawned = 0f;
     private float sheepLimit = 10f; //Increase sheep spawn speed every 10 sheep
-    private float speedDecrement = 0.9f;
+    private float speedDecrement = 0.85f;
+    private float lowestSpawnSpeed = 0.5f;
     public List<Transform> sheepSpawnPositions = new List<Transform>();
     private List<GameObject> sheepList = new List<GameObject>();
 
@@ -48,7 +49,14 @@ public class SheepSpawner : MonoBehaviour
             if (sheepSpawned >= sheepLimit)
             {
                 sheepSpawned = 0f;
-                timeBetweenSpawns *= speedDecrement;
+                if (timeBetweenSpawns < lowestSpawnSpeed)
+                {
+                    timeBetweenSpawns = lowestSpawnSpeed; //Sets sheep to default minimum spawn time after enough decrements have run
+                }
+                else
+                {
+                    timeBetweenSpawns *= speedDecrement;
+                }
             }
 
             yield return new WaitForSeconds(timeBetweenSpawns);
