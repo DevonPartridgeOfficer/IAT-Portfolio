@@ -1,7 +1,9 @@
-﻿/*
- * written by Joseph Hocking 2017
+﻿/* written by Joseph Hocking 2017
  * released under MIT license
  * text of license https://opensource.org/licenses/MIT
+ * 
+ *  Filename: FpsMovement.cs
+ *   Purpose: Handles the user control inputs for movement/camera
  */
 
 using System.Collections;

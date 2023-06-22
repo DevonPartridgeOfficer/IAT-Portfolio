@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*  Filename: MazeConstructor.cs
+ *   Purpose: Handles the creation of game maze through set values and random generation
+ */
+
+using UnityEngine;
 
 public class MazeConstructor : MonoBehaviour
 {

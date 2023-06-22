@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/*  Filename: MazeMeshGenerator.cs
+ *   Purpose: Creates a 2D plane - either ceiling, floor, wall face
+ *            Places a floor and ceiling in the scene, then places the appropriate walls
+ */
+
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MazeMeshGenerator

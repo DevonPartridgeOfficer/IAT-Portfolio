@@ -2,6 +2,11 @@
  * written by Joseph Hocking 2017
  * released under MIT license
  * text of license https://opensource.org/licenses/MIT
+ *
+ * Filename: TriggerEventRouter.cs
+ *  Purpose: Triggers events with a callback
+ *
+ *
  */
 
 using System.Collections;

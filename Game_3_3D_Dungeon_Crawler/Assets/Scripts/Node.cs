@@ -1,4 +1,8 @@
-﻿public class Node
+﻿/*  Filename: Node.cs
+ *   Purpose: Determines best AI path using x/y position and costs - A* search
+ */
+
+public class Node
 {
     public int x;
     public int y;

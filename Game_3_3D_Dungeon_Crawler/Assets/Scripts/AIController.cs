@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*  Filename: AIController.cs
+ *   Purpose: Evaluates best path to endgoal (player) using fCost/hCost
+ *            Moves enemy along path during gameplay while reevaluating path
+ *            Starts and stops the AI
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

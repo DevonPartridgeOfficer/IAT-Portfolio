@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  Filename: GameController.cs
+ *   Purpose: Manages gameplay, creation of game objects (player, monster)
+ */
+
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(MazeConstructor))]
@@ -33,7 +37,7 @@ public class GameController : MonoBehaviour
     }
 
     //Setup for player character
-    //Player will starrt at the beginning of the maze [1,1]
+    //Player will start at the beginning of the maze [1,1]
     private GameObject CreatePlayer()
     {
         Vector3 playerStartPosition = new Vector3(constructor.hallWidth, 1, constructor.hallWidth);
@@ -53,6 +57,7 @@ public class GameController : MonoBehaviour
         return monster;
     }
 
+    //Outputs message to log when treasure is collected and stops game
     private void OnTreasureTrigger(GameObject trigger, GameObject other)
     {
         Debug.Log("You Won!");
