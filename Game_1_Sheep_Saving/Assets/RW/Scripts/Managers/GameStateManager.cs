@@ -21,11 +21,13 @@ public class GameStateManager : MonoBehaviour
 
     public int sheepDroppedBeforeGameOver; //Gameover flag
     public SheepSpawner sheepSpawner;
+    public int highScore;
 
     // Start a new GameStateManager instance
     void Awake()
     {
         Instance = this;
+        highScore = GameSettings.highScore;
     }
 
     // Check if player has pressed esc to exit game
@@ -42,7 +44,7 @@ public class GameStateManager : MonoBehaviour
     {
         sheepSaved++;
         UIManager.Instance.UpdateSheepSaved();
-
+        CheckScore(); //Checks if saved sheep is higher than current highscore and updates during gameplay
     }
 
     //Increment the UI display for losses
@@ -58,12 +60,24 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    //Updates score if better this playthrough
+    //Happens during gameplay and gameover
+    private void CheckScore()
+    {
+        if (sheepSaved > highScore)
+        {
+            GameSettings.highScore = sheepSaved;
+        }
+        UIManager.Instance.UpdateHighScore();
+    }
+
     //Stops all sheep spawning and removes all remaining sheep objects
-    //Show gameover screen
+    //Show gameover screen and updates highscore if necessary
     private void GameOver()
     {
         sheepSpawner.canSpawn = false;
         sheepSpawner.DestroyAllSheep();
         UIManager.Instance.ShowGameOverWindow();
+        CheckScore(); //Checks at end if score is accurate
     }
 }
