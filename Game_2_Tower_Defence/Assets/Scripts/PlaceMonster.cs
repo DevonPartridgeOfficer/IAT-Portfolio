@@ -1,3 +1,9 @@
+/*  Filename: PlaceMonster.cs
+ *   Purpose: Places user controlled monster on an open spot
+ *            Will only place if user has enough gold
+ *            Controls levelling of monsters to stronger types on filled spots
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,24 +14,20 @@ public class PlaceMonster : MonoBehaviour
     private GameObject monster;
     private GameManagerBehaviour gameManager;
 
-    // Start is called before the first frame update
+    // Gets/stores the current Game Manager at the start of the game
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Checks for open spot and that user has enough gold to buy a monster
     private bool CanPlaceMonster()
     {
         int cost = monsterPrefab.GetComponent<MonsterData>().levels[0].cost;
         return monster == null && gameManager.Gold >= cost;
     }
 
+    //Looks if there is a monster to upgrade and if user has enough gold
     private bool CanUpgradeMonster()
     {
         if (monster != null) //Check that there is a monster to upgrade
@@ -40,6 +42,7 @@ public class PlaceMonster : MonoBehaviour
         return false;
     }
 
+    //Controls the user input of placing/upgrading monsters with mouse click
     void OnMouseUp()
     {
         if (CanPlaceMonster())

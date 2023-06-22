@@ -1,3 +1,8 @@
+/*  Filename: BulletBehaviour.cs
+ *   Purpose: Controls bullets shooting from monsters (speed, direction, damage)
+ *            When an enemy is hit, decrease health and/or increase gold if killed
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +17,7 @@ public class BulletBehaviour : MonoBehaviour
     private Vector3 normalizeDirection;
     private GameManagerBehaviour gameManager;
 
-    // Start is called before the first frame update
+    // When a new bullet is instantiated, normalize the difference between targetPosition and startPosition to get a standard 'direction' vector
     void Start()
     {
         normalizeDirection = (targetPosition - startPosition).normalized;
@@ -20,12 +25,13 @@ public class BulletBehaviour : MonoBehaviour
         gameManager = gm.GetComponent<GameManagerBehaviour>();
     }
 
-    // Update is called once per frame
+    // Updates the bullet's position along the normalized vector, according to the speed
     void Update()
     {
         transform.position += normalizeDirection * speed * Time.deltaTime;
     }
 
+    //Checks for collision with an enemy
     void OnTriggerEnter2D (Collider2D other)
     {
         target = other.gameObject;

@@ -1,3 +1,7 @@
+/*  Filename: HealthBar.cs
+ *   Purpose: Sets health for all enemies and updates if shot by player monster
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,13 +12,13 @@ public class HealthBar : MonoBehaviour
     public float currentHealth = 100;
     private float originalScale;
 
-    // Start is called before the first frame update
+    // Starts healthbar with a default scale for the gameobject (full health)
     void Start()
     {
         originalScale = gameObject.transform.localScale.x;
     }
 
-    // Update is called once per frame
+    // Updates the healthbar with new health % and displays
     void Update()
     {
         Vector3 tmpScale = gameObject.transform.localScale;

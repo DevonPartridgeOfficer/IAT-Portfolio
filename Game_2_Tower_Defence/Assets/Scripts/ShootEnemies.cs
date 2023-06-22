@@ -1,3 +1,8 @@
+/*  Filename: ShootEnemies.cs
+ *   Purpose: Controls checking for available enemies to shoot
+ *            Uses intervals between user monster shots
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +48,7 @@ public class ShootEnemies : MonoBehaviour
         }
     }
 
+    //Adds enemies to list of inRange
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.gameObject.tag.Equals("Enemy"))
@@ -51,6 +57,7 @@ public class ShootEnemies : MonoBehaviour
         }
     }
 
+    //Removes enemies from list of inRange
     void OnTriggerExit2D (Collider2D other)
     {
         if (other.gameObject.tag.Equals("Enemy"))
@@ -59,6 +66,7 @@ public class ShootEnemies : MonoBehaviour
         }
     }
 
+    //Shoots new bullet depending on monster location/level
     void Shoot(Collider2D target)
     {
         GameObject bulletPrefab = monsterData.CurrentLevel.bullet;

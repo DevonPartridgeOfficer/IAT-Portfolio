@@ -1,4 +1,21 @@
-﻿/*
+﻿/*  Filename: Tutorial.cs
+ *   Purpose: Displays the ingame UI tutorial when clicking on the '?'
+ */
+
+using UnityEngine;
+using System.Collections;
+
+public class Tutorial : MonoBehaviour
+{
+
+    public void DisplayTutorial()
+    {
+        gameObject.GetComponent<Animator>().SetTrigger("displayTutorial");
+    }
+
+}
+
+/*
  * Copyright (c) 2017 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,16 +44,3 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-using UnityEngine;
-using System.Collections;
-
-public class Tutorial : MonoBehaviour
-{
-
-    public void DisplayTutorial()
-    {
-        gameObject.GetComponent<Animator>().SetTrigger("displayTutorial");
-    }
-
-}

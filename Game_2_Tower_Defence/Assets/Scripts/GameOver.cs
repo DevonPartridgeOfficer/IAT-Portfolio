@@ -1,4 +1,20 @@
-﻿/*
+﻿/*  Filename: GameOver.cs
+ *   Purpose: Restarts the game immediately after the enemies have reached the end and gameover screen has shown
+ */
+
+using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+
+public class GameOver : MonoBehaviour
+{
+    void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}
+
+/*
  * Copyright (c) 2017 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,17 +43,3 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
-
-public class GameOver : MonoBehaviour
-{
-
-    void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-}

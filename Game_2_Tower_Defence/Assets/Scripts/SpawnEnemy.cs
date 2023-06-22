@@ -1,3 +1,7 @@
+/*  Filename: SpawnEnemy.cs
+ *   Purpose: Sets enemies to spawn in waves with an interval between each
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,18 +22,19 @@ public class SpawnEnemy : MonoBehaviour
     public int timeBetweenWaves = 5;
 
     private GameManagerBehaviour gameManager;
-
     private float lastSpawnTime;
     private int enemiesSpawned = 0;
 
-    // Start is called before the first frame update
+    // Set lastSpawnTime to current time that the script initialises
+    // Find the GameManagerBehaviour for use later
     void Start()
     {
         lastSpawnTime = Time.time;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
     }
 
-    // Update is called once per frame
+    // Checks the current wave and determines how many enemies should be spawned
+    // Only spawns new enemies after an interval
     void Update()
     {
         int currentWave = gameManager.Wave;

@@ -1,3 +1,7 @@
+/*  Filename: MoveEnemy.cs
+ *   Purpose: Moves the enemies along a path of waypoints in sequence towards the end
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +14,13 @@ public class MoveEnemy : MonoBehaviour
     private int currentWaypoint = 0;
     private float lastWaypointSwitchTime;
 
-    // Start is called before the first frame update
+    // Initialises value to current time
     void Start()
     {
         lastWaypointSwitchTime = Time.time;
     }
 
-    // Update is called once per frame
+    // Moves towards next waypoint over time, gets a new next waypoint only once reached 
     void Update()
     {
         Vector3 startPosition = waypoints[currentWaypoint].transform.position;
@@ -47,6 +51,7 @@ public class MoveEnemy : MonoBehaviour
         }
     }
 
+    //Changes sprite direction to match the path direction
     private void RotateIntoMoveDirection()
     {
         Vector3 newStartPosition = waypoints[currentWaypoint].transform.position;

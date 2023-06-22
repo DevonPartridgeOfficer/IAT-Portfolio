@@ -1,3 +1,8 @@
+/*  Filename: GameManagerBehaviour.cs
+ *   Purpose: Manages gold, waves, health and gameover
+ *            Sets initial variable values to begin game
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +17,7 @@ public class GameManagerBehaviour : MonoBehaviour
     public Text healthLabel;
     public GameObject[] healthIndicator;
 
-    // Start is called before the first frame update
+    // Sets initial start game values
     void Start()
     {
         Gold = 1000;
@@ -20,12 +25,7 @@ public class GameManagerBehaviour : MonoBehaviour
         Health = 5;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Displays current gold amount to UI
     private int gold;
     public int Gold
     {
@@ -37,6 +37,7 @@ public class GameManagerBehaviour : MonoBehaviour
         }
     }
 
+    //Displays current wave to UI and triggers next wave screen
     private int wave;
     public int Wave
     {
