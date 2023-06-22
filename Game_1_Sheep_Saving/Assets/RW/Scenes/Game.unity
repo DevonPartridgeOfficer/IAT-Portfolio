@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sheepSaved: 0
   sheepDropped: 0
-  sheepDroppedBeforeGameOver: 3
+  sheepDroppedBeforeGameOver: 5
   sheepSpawner: {fileID: 1075150376}
 --- !u!1 &163855277
 GameObject:
@@ -971,14 +971,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341b1b85a88086a42b2ac3253b6afb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canSpawn: 1
   sheepPrefab: {fileID: 5535211341658705285, guid: ce81e35080857e94b9402da0da064bc3,
     type: 3}
+  canSpawn: 1
+  timeBetweenSpawns: 3
   sheepSpawnPositions:
   - {fileID: 661520954}
   - {fileID: 2023916547}
   - {fileID: 577288499}
-  timeBetweenSpawns: 2
 --- !u!4 &1075150377
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 /*  Filename: SheepSpawner.cs
  *   Purpose: Manages the creation/deletion of sheep objects
  *            Starts a coroutine to spawn sheep until gameover flag (from GameStateManager.cs)
+ *            Speeds up sheep spawning over time (every 10 sheep spawned = time between decremented by 10%)
  */
 
 using System.Collections;
@@ -12,6 +13,9 @@ public class SheepSpawner : MonoBehaviour
     public GameObject sheepPrefab;
     public bool canSpawn = true; //Sets sheep to constantly spawn during gameplay
     public float timeBetweenSpawns;
+    private float sheepSpawned = 0f;
+    private float sheepLimit = 10f; //Increase sheep spawn speed every 10 sheep
+    private float speedDecrement = 0.9f;
     public List<Transform> sheepSpawnPositions = new List<Transform>();
     private List<GameObject> sheepList = new List<GameObject>();
 
@@ -38,6 +42,15 @@ public class SheepSpawner : MonoBehaviour
         while (canSpawn)
         {
             SpawnSheep();
+
+            //Speeds up sheep spawning over time
+            sheepSpawned++;
+            if (sheepSpawned >= sheepLimit)
+            {
+                sheepSpawned = 0f;
+                timeBetweenSpawns *= speedDecrement;
+            }
+
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
     }
